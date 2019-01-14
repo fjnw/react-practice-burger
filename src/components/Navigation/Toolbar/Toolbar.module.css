@@ -22,7 +22,7 @@
 }
 
 @media (max-width: 499px) {
-  .DisplayOnly {
+  .DesktopOnly {
     display: none;
   }
 }
