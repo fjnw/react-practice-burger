@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
 
 
 // const orderSummary = (props) => {
-  
+
 // doesn't have to be a class. Should revert to functional component ^ 
 class OrderSummary extends Component {
 
