@@ -31,13 +31,13 @@ class BurgerBuilder extends Component {
   componentDidMount () {
     // console.log(this.props)
 
-    Axios.get('https://react-practice-burger-aebf4.firebaseio.com/ingredients.json')
-      .then(response => {
-        this.setState({ingredients: response.data})
-      })
-      .catch(error => {
-        this.setState({error: true})
-      });
+    // Axios.get('https://react-practice-burger-aebf4.firebaseio.com/ingredients.json')
+    //   .then(response => {
+    //     this.setState({ingredients: response.data})
+    //   })
+    //   .catch(error => {
+    //     this.setState({error: true})
+    //   });
   }
 
   updatePurchaseState(ingredients) {
