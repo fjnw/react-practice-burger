@@ -6,28 +6,20 @@ import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as burgerBuilderActions from '../../store/actions/index';
+import axios from '../../axios-orders';
+
 
 class BurgerBuilder extends Component {
 
   state = {
-    purchasing: false,
-    loading: false,
-    error: false
+    purchasing: false
   }
 
   componentDidMount () {
-    // console.log(this.props)
-    axios.get('https://react-practice-burger-aebf4.firebaseio.com/ingredients.json')
-      .then(response => {
-        this.setState({ingredients: response.data})
-      })
-      .catch(error => {
-        this.setState({error: true})
-      });
+    console.log(this.props)
   }
 
   updatePurchaseState(ingredients) {
@@ -85,10 +77,6 @@ class BurgerBuilder extends Component {
       purchaseCancelled={this.purchaseCancelHandler}
       purchaseContinued={this.purchaseContinueHandler}/>;
     } 
-          
-    if (this.state.loading) {
-      orderSummary = <Spinner />
-    };
 
     return (
       <Aux>
@@ -118,4 +106,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler( BurgerBuilder, axios ));
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler( BurgerBuilder, axios));
