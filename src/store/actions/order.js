@@ -17,8 +17,16 @@ export const purchaseBurgerFail = (error) => {
   }
 };
 
-export const purchaseBurgerStart = (orderData) => {
+export const purchaseBurgerStart = () => {
+  return {
+    type: actionTypes.PURCHASE_BURGER_SUCCESS
+  }
+}
+
+export const purchaseBurger = (orderData) => {
   return dispatch => {
+    dispatch(purchaseBurgerStart());
+    
     Axios.post('/orders.json', orderData)
     .then(response => {
       console.log(response.data);
@@ -26,5 +34,6 @@ export const purchaseBurgerStart = (orderData) => {
     })
     .catch(error => {
       dispatch( purchaseBurgerFail( error ));
-    });  }
+    });  
+  }
 }
