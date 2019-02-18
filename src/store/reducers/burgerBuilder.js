@@ -39,9 +39,9 @@ const reducer = (state = initialState, action) => {
       // ingredients: action.ingredients,
       ingredients: {
         salad: action.ingredients.salad,
-        salad: action.ingredients.bacon,
-        salad: action.ingredients.cheese,
-        salad: action.ingredients.meat
+        bacon: action.ingredients.bacon,
+        cheese: action.ingredients.cheese,
+        meat: action.ingredients.meat
       },
       error: false
     };
