@@ -1,7 +1,7 @@
-import axios from 'axios';
+import Axios from 'axios';
 
-const instance = axios.create({
-    baseURL: 'https://react-practice-burger-aebf4.firebaseio.com/'
+const instance = Axios.create({
+  baseURL: 'https://react-practice-burger-aebf4.firebaseio.com/'
 });
 
 export default instance;
